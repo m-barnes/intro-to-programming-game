@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Don't Die - The Text Game!</title>
+<link rel="stylesheet" type="text/css" href="game.css" />
+</head>
+<body>
+<p id="shoreline">You have found the shoreline.<br/>Congratulations.<br/><br/>
+To your surprise, the shoreline isn't as abandoned as everything else in this godforsaken place and--weirdly enough--nothing has tried to kill you in the last few minutes...not that stuff has killed you yet, right? I mean, then you'd be dead and not here on the bustling shoreline.<br/><br/>
+Your head is a mish-mash of memories mostly of things that you could not possibly have actually experienced. You chalk it up to the after effects of that tower...wait...what tower?<br/><br/>
+You shake your head to clear the cobwebs<br/><br/>
+There are a ton of native islanders (is that the right term? One hates to be accidentally offensive) moving back and forth between the water and a small camp they've appeared to set up for the purposes of processing some of the local resources. The women and children appear to be working exclusively in the camp, while most of the men seem to be packing the supplies onto several rather large, hand-crafted ships. The ones you're worried about, however, are the ones posted on the perimeter with the dangerous looking spears and machetes. They appear to be guarding...well, everything. While they might be okay with helping a stranger stumbling out over the hill and into their camp unexpectedly, they also might not and the guards would be the ones to be immediately worried about.<br/><br/>
+It might be better to forgo the natives altogether and 'commandeer' a boat for your personal use. Yeah, they might take it badly, but what are the chances that they'd take the risk of sending out another of their valuable supply ships to chase the one you've taken? It's a risky path, but if you're going to be a pirate, be a pirate, yeah?<br/><br/>
+
+
+<input type="button" onclick="nativeDeath();" value="Talk to the natives"/>
+<input type="button" onclick="boatDeath();" value="Steal a boat" /></p>
+
+<pre id="ascii"><p>
+
+            .
+            |\
+            | \
+            |  \
+            |   \
+            |    \
+            |     \
+            |      \
+            |       \       ____O
+            |        \     .' ./
+            |   _.,-~"\  .',/~'
+            <-~"   _.,-~" ~ |
+^"~-,._.,-~"^"~-,._\       /,._.,-~"^"~-,._.,-~"^"~-,._
+~"^"~-,._.,-~"^"~-,._.,-~"^"~-,._.,-~"^"~-,._.,-~"^"~-,._
+^"~-,._.,-~"^"~-,._.,-~"^"~-,._.,-~"^"~-,._.,-~"^"~-,._
+~-,._.,-~"^"~-,._.,-~"^"~-,._.,-~"^"~-,._.,-~"^"~-,._
+
+</p></pre>
+
+</body>
+<footer id ="footer">
+
+<script>
+	function nativeDeath() {
+	var answer = prompt("Talking is always better. Except when it isn't. Are you sure you want to take your chances with the natives?\nYes or No?").toLowerCase();
+		if (answer == "yes") {
+			document.getElementById("shoreline").innerHTML = "In a weird confluence of events, you discover a few things real fast once you crest the dune. The first is that they don't speak any language with which you are familiar. The second is that you--apparently--haven't used your words in a long time, so, when you do try to speak, it kind of comes out a harsh, garbled, hot mess. Third, and you're not too sure of this, but you think...think that all your wild gesticulating might mean something different in their culture. You hold your hands up in what you think is the universal sign of 'I come in peace,' but you think it might mean something different to them. That is, if all yelling, the arrows flying at you, and stabby stuff is any indication.<br/><strong><br/><br/><img src='death.png'/><br/>You die in a--mercifully--quick burst of screaming pain.</strong>";
+			document.getElementById("ascii").innerHTML = "";
+			document.getElementById("footer").innerHTML = "<h3><a href=\"index.html\">Start Over?</a></h3>"
+		}
+		else if (answer=="no"){
+			alert("You decide to reevaluate your life choices");
+			document.getElementById("cave").reset();
+		}
+		else {
+			alert("Gibberish will get you nowhere. You must make a decision.");
+		}
+	}
+
+	function boatDeath() {
+	var answer = prompt("Stealing is wrong. This can't possibly end well. Are you sure?\nYes or No?").toLowerCase();
+		if (answer == "yes") {
+			document.getElementById("shoreline").innerHTML = "Turns out they do send someone after you for stealing their boat. Who knew? Fortunately, by the time they notice you sneaking away with their boat, you're well into the water and making good time. You manage to get away. Unfortunately, you stole a boat that had yet to be laden with supplies, isn't all that sea worthy and there doesn't seem to be any land nearby. Well, who knows? You think you might be sailing in circles.<br/><br/> Days pass. Between the heat, lack of anything to eat or drink, and the stress of being lost in a sea of nothing, you start to hallucinate.<br/><br/> You wish you had some rum. A good pirate has rum, right? Or is it grog? After days of drifting aimlessly on the water in the unforgiving sun, anything would be great.<br/><br/>You hear a song coming from just below the water to your right and investigate. You find a beautiful mermaid beckoning you below the waves. In your sorry state, you think this is perfectly normal and slide off into the water to join your new friend. You never surface. <br/><strong><br/><br/><img src='death.png'/><br/>You die. Off to the depths of Davy Jones' locker and the deep black abyss.</strong>";
+			document.getElementById("ascii").innerHTML = "";
+			document.getElementById("footer").innerHTML = "<h3><a href=\"index.html\">Start Over?</a></h3>"
+		}
+		else if (answer=="no"){
+			alert("You decide to reevaluate your life choices");
+			document.getElementById("cave").reset();
+		}
+		else {
+			alert("Gibberish will get you nowhere. You must make a decision.");
+		}
+	}
+
+</script>
+
+</footer>
+</html>

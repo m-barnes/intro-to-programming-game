@@ -1,0 +1,28 @@
+body {
+	background-color:#000000;
+	
+}
+
+img {
+	width:25%;
+}
+
+p {
+	color:#ffffff;
+	width:65%;
+	margin: 0 auto;
+	margin-top: 3em;	
+}
+
+h3 {
+	color:#ffffff;
+	margin: 0 auto;
+	margin-top:5em;
+	width:65%;
+}
+
+footer a {
+	color:#ffffff;
+	text-decoration:none;
+	
+}

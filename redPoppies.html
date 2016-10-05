@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Don't Die - The Text Game!</title>
+<link rel="stylesheet" type="text/css" href="game.css" />
+</head>
+<body>
+<p id="outsideCave">You are in a field, surrounded by pretty red poppies.<br/>Congratulations.<br/><br/>
+The flowers are pretty and smell super. They are certainly a nice change from that musty cave and hobo-smelling campsite from earlier. Tucked into the tall grasses, a gentle wind blows across the field causing everything it touches to sway gently. It wouldn't be so bad to hang out here for a while in the sun, would it? Eventually, you'll have to leave, but isn't there something about 'stopping to smell the roses?' You're sure that applies to poppies as well, right?<br/><br/>
+On the breeze, however, is a fairly strong smell of salt, which means ocean, which might mean food...or people...or boats...or people with food and / or boats. Whatever the case, it might mean a way out, so, while sticking around in the field might be nice, it might be nicer to find some sailor with a spare bunk ready to ship out on high tide into the deep blue forever.<br/><br/>
+While trying to come up with all the fancy nautical talk, you notice out of the corner of your eye a rather dark and mysterious tower that you're sure wasn't there before. It's tall, thin, and reaches far, far into the sky. While it looks like it might topple over at any minute, you get the impression that that is just an...impression.<br/><br/>
+What is going on? The longer you stare at the tower that wasn't there, the fuzzier your head gets. At this point, you're not sure you could make it over there even if you wanted to.<br/><br/>
+
+
+
+
+<input type="button" onclick="poppieDeath()" value="Smell the poppies"/>
+<input type="button" onclick="location.href='shoreLine.html';" value="A pirate's life for you" />
+<input type="button" onclick="location.href='tower.html';" value="You think tower be good." /></p>
+
+
+<pre id="ascii"><p>
+    _
+  _(_)_
+ (_)@(_)               ,,,   _
+   (_),,,             {{{}}_(_)_
+    |{{{}}             ~Y~(_)@(_)
+    | ~Y~(@)       {}} \|/  (_)
+  (\|/)| \Y/       ~Y~ \|/ (\|/)
+   \|/\|/\|/  \|/  \|/\\|//\\|//
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+</p></pre>
+</body>
+<footer id="footer">
+<br/><br/>
+<h3><a href="index.html">Start Over?</a></h3>
+<script>
+	function poppieDeath() {
+	var answer = prompt("The field is warm and inviting. What could go wrong, yeah? Stick around?\nYes or No?").toLowerCase();
+		if (answer == "yes") {
+			document.getElementById("outsideCave").innerHTML = "The field is good. The field is warm. The field...is filled with thousands and thousands of angry flying bug things! It appears your foray into the field as stirred up a small...no, a rather large and angry population of little stinging death machines.<br/><br/>You run and run and run, yet they have you at every turn. As the greatly irritated horde stings you repeatedly over and over and over again, you notice two things. First that tower seems to be laughing at you, which is just super. And two, despite running what feels like miles, you appear to only have made it across the road. In either case, it feels like the perfect little topping to the already large crap cupcake you've been feasting on since you woke up.<br/><br/><img src='death.png'/><br/>You die slowly and in great pain, but bemused all the same.</strong>";
+			document.getElementById("ascii").innerHTML = "";
+			document.getElementById("footer").innerHTML = "<h3><a href=\"index.html\">Start Over?</a></h3>"
+		}
+		else if (answer=="no"){
+			alert("You decide to reevaluate your life choices");
+			document.getElementById("cave").reset();
+		}
+		else {
+			alert("Gibberish will get you nowhere. You must make a decision.");
+		}
+	}
+
+</script>
+
+</footer>
+</html>

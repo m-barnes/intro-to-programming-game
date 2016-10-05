@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Don't Die - The Text Game!</title>
+<link rel="stylesheet" type="text/css" href="game.css" />
+</head>
+<body>
+<p id="cave">You wake up in a dimly lit cave.<br/><br/>
+As your eyes slowly adjust to their surroundings you stand and take inventory.<br/><br/>
+While you seem to have nothing in your possession, you are modestly covered in a t-shirt and shorts made--from what appears to be--a poly/cotton blend, which is nice, yeah? You also appear to have shoes...well, sandals of a sort. The left one seems a little worse as the strap securing it your foot dangles dangerously.<br/><br/>
+Behind you is the dark, gaping maw of the interior of the cave. From the darkness there is a faint rumbling that rises over and through you. It seems to be growing louder and more violent with each passing moment. In front of you there is--what looks like--an opening in the rock. The light coming through the curtain of vines covering the other side indicates that outdoors lies that direction.<br/><br/>
+You have a decision to make.<br/><br/>
+
+<input type="button" onclick="caveDeath()" value="You live here now."/>
+<input type="button" onclick="location.href='outsideCave.html';" value="Take your chances outside." /></p>
+
+<pre id="ascii"><p>
+  .-"""-.		  .-"""-.		  .-"""-.		 .-"""-.
+ /* * * *\		 /* * * *\		 /* * * *\		/* * * *\
+:_.-:`:-._;		:_.-:`:-._;		:_.-:`:-._;		_.-:`:-._;
+    (_)			    (_)			    (_)			   (_)			  
+ \|/(_)\|/	\|/	\|/ (_)\|/	\|/	\|/ (_)\|/	\|/\|/	\|/(_)\|/
+ 
+
+
+
+</p></pre>
+
+</body>
+<footer id ="footer">
+
+<script>
+	function caveDeath() {
+	var answer = prompt("That rumbling is disconcerting. Are you sure you want to stay here?\nYes or No?").toLowerCase();
+		if (answer == "yes") {
+			document.getElementById("cave").innerHTML = "The rumbling grows louder and the cave begins to shake. As the walls collapse around you, you realize you've made a horrible, horrible mistake.<br/><strong><br/><br/><img src='death.png'/><br/>You die screaming.</strong>";
+			document.getElementById("ascii").innerHTML = "";
+			document.getElementById("footer").innerHTML = "<h3><a href=\"index.html\">Start Over?</a></h3>"
+		}
+		else if (answer=="no"){
+			alert("You decide to reevaluate your life choices");
+			document.getElementById("cave").reset();
+		}	
+		else {
+			alert("Gibberish will get you nowhere. You must make a decision.");
+		}
+	}
+
+</script>
+
+</footer>
+</html>

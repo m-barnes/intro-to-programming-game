@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Don't Die - The Text Game!</title>
+<link rel="stylesheet" type="text/css" href="game.css" />
+</head>
+<body>
+<p id="outsideCave">You are outside.<br/>Congratulations.<br/><br/>
+As you step out into the light, the rumbling in the cave gets louder and more violent. With feet now on the hard packed earth of the forest, the cave collapses behind you, leaving only a thick plume of smoke and debris where the opening once was. Relief floods your body.<br/><br/>
+Before you lies the remnants of a small--seemingly abandoned--campsite. It might, at one time, have been yours in the time before, but you cannot recall with any certainty.<br/><br/>
+To your left is a dark and winding path through the forest. You have no idea what might lie past the tree line, but a sense of uneasiness comes over you if you think about it too long. <br/><br/>
+To your right is wide open clearing. A field of what looks like red poppies stretches as far as the eye can see. The smell of salt on the air indicates you might be near a shoreline somewhere, but you can't see it from where your standing.<br/><br/>
+Of course, there's always the campsite, right? It might be a good idea to rest for a minute. It would give you a moment to clear your head, find your bearings, and come up with a solid plan of attack for how to get out of this godforsaken place.<br/><br/>
+
+Another decision lies before you. What do you do?<br/><br/>
+
+<input type="button" onclick="location.href='intoForest.html'" value="The woods are lovely, dark, and deep"/>
+<input type="button" onclick="location.href='redPoppies.html'" value="I do like red poppies" />
+<input type="button" onclick="campDeath()" value="I need a minute...maybe two." /></p>
+
+<pre id="ascii"><p>
+
+        ______
+       /     /\
+      /     /  \
+     /_____/----\_    (
+    "     "          ).
+   _ ___          o (:') o
+  (@))_))        o ~/~~\~ o
+                  o  o  o
+
+</p></pre>
+
+</body>
+<footer id="footer">
+<br/><br/>
+<h3><a href="index.html">Start Over?</a></h3>
+<script>
+	function campDeath() {
+	var answer = prompt("It is enticing and that ratty sleeping bag does look nice. Stick around?\nYes or No?").toLowerCase();
+		if (answer == "yes") {
+			document.getElementById("outsideCave").innerHTML = "You nod off after a few minutes.<br/><br/>Turns out, the campsite wasn't abandoned after all and the hobo that stumbles in a few hours later has taken exception to you sleeping in his beloved bunk, which he keeps referring to as 'Martha.'<br/> Seizing a nearby chunk of wood, he angrily bludgeons you all the while screaming, almost incomprehensively, at the bedroll, asking 'her' 'how she could do this to him, again?'<br/><strong><br/><br/><img src='death.png'/><br/>You die screaming in great pain.</strong>";
+			document.getElementById("ascii").innerHTML = "";
+			document.getElementById("footer").innerHTML = "<h3><a href=\"index.html\">Start Over?</a></h3>"
+		}
+		else if (answer=="no"){
+			alert("You decide to reevaluate your life choices");
+			document.getElementById("cave").reset();
+		}
+		else {
+			alert("Gibberish will get you nowhere. You must make a decision.");
+		}
+	}
+
+</script>
+
+</footer>
+</html>

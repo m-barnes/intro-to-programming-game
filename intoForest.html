@@ -1,0 +1,75 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Don't Die - The Text Game!</title>
+<link rel="stylesheet" type="text/css" href="game.css" />
+</head>
+<body>
+
+<p id="intoForest">You are standing in front of a creepy forest.<br/>Congratulations.<br/><br/>
+At the tree line, the path splits into two divergent directions. Neither seem the best choice, but--taken at face value--the right (with it's less creepy tree lined path and slightly less evil vibe) seems to be the better option. In either event, it looks like you could get lost in there fast if you weren't careful. <br/> <br/>
+Choose your path, grasshopper.<br/><br/>
+
+<input type="button" onclick="getLost()" value="Go left, down the super creepy tree lined path with crazy evil vibe."/><br/><br/>
+<input type="button" onclick="getLost()" value="Go right, down the less creepy tree lined path with the not-so-crazy evil vibe." /><br/><br/>
+<input type="button" onclick="location.href='outsideCave.html'" value="Choose neither. Go back to the abandoned campsite." /></p>
+
+<pre id="ascii"><p>
+                                               .
+                                   .         ;
+      .              .              ;%     ;;
+        ,           ,                :;%  %;
+         :         ;                   :;%;'     .,
+,.        %;     %;            ;        %;'    ,;
+  ;       ;%;  %%;        ,     %;    ;%;    ,%'
+   %;       %;%;      ,  ;       %;  ;%;   ,%;'
+    ;%;      %;        ;%;        % ;%;  ,%;'
+     `%;.     ;%;     %;'         `;%%;.%;'
+      `:;%.    ;%%. %@;        %; ;@%;%'
+         `:%;.  :;bd%;          %;@%;'
+           `@%:.  :;%.         ;@@%;'
+             `@%.  `;@%.      ;@@%;
+               `@%%. `@%%    ;@@%;
+                 ;@%. :@%%  %@@%;
+                   %@bd%%%bd%%:;
+                     #@%%%%%:;;
+                     %@@%%%::;
+                     %@@@%(o);  . '
+                     %@@@o%;:(.,'
+                 `.. %@@@o%::;      	________
+                    `)@@@o%::;         | Stay	|
+                     %@@(o)::;	       |   Out! |
+                    .%@@@@%::;         |________>
+                    ;%@@@@%::;.            ||
+                   ;%@@@@%%:;;;.           || /\/
+               ...;%@@@@@%%:;;;;,.. 	/\\||///\
+
+
+</p></pre>
+</body>
+<footer id="footer">
+<br/><br/>
+<h3><a href="index.html">Start Over?</a></h3>
+<script>
+
+	var counter = 0;
+	function getLost() {
+		if (counter < 20) {
+			var myArray = ["The forest is dark and full of terrors", "An owl hoots in the distance. Creepily.", "There's a creaking noise behind you.", "Was that a growl? Is there something out there?", "Dear God, did you hear that noise?" , "This is bad. Real bad", "The bushes rustle. You think it might want to eat you.", "This doesn't look so bad. Nope Nevermind. Still pretty bad.", "Wait. What was that?", "You think you might be in trouble."];
+
+			var rand = myArray[Math.floor(Math.random() * myArray.length)];
+			counter++;
+			document.getElementById("intoForest").innerHTML =  rand + "<br/><br/><input type=\"button\" onclick=\"getLost()\" value=\"Keep Going\"/> <input type=\"button\" onclick=\"getLost()\" value=\"Turn Around\"/>";
+			}
+
+		else {
+			document.getElementById("intoForest").innerHTML = "You have lost your way. You continue to wander aimlessly, but have no idea where you are or how to get out. Every turn seems to lead you further and further into the forest that seems determined to see you suffer. <br/><br/><img src='death.png'/><br/>You die slowly.</strong>";
+			document.getElementById("ascii").innerHTML = "";
+			document.getElementById("footer").innerHTML = "<h3><a href=\"index.html\">Start Over?</a></h3>"
+			};
+	}
+
+</script>
+
+</footer>
+</html>
